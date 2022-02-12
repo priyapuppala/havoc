@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <title>Entreprenuer | Ideas</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'entreprenuer/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{% static 'entreprenuer/img/logo.svg' %}">
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'entreprenuer:home' %}">Home</a></li>
+                <li><a href="{% url 'entreprenuer:services' %}">Services</a></li>
+                <li><a href="{% url 'entreprenuer:contact' %}">Contact</a></li>
+                <li><a href="{% url 'entreprenuer:about' %}">About</a></li>
+                <li><a href="{% url 'entreprenuer:logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <br>
+    <br>
+    <section id="p-section">
+    <div class="invprofile">
+        <form method="post" enctype="multipart/form-data">
+  <div class="container"><center>
+    <h1>StartUp Idea Submit</h1>
+    <p>Your StartUp Idea will be displayed to all the investors.</p>
+      </center>
+          <center>
+      <table>
+         {% csrf_token %}
+         {% for field in form %}
+          <tr>
+              <td>
+                  <label><b>{{field.label}}</b></label>
+              </td>
+              <td class="ltd">
+                  {{field}}
+              </td>
+          </tr>
+
+      {% endfor %}
+      </table>
+      {{field}}</li>
+     <br>
+    <button type="submit" value="submit" >Submit</button>
+
+      </center>
+  </div>
+</form>
+
+    </div>
+  </section>
+</body>
+</html>

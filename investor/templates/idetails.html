@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<head>
+    <title>Investor | Content</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'investor/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{% static 'investor/img/logo.svg' %}">
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'investor:home' %}">Home</a></li>
+                <li><a href="{% url 'investor:services' %}">Services</a></li>
+                <li><a href="{% url 'investor:contact' %}">Contact</a></li>
+                <li><a href="{% url 'investor:about' %}">About</a></li>
+                <li><a href="{% url 'investor:logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <br>
+    <br>
+    <header class="ScriptHeader">
+    <div class="rt-container">
+    	<div class="col-rt-12">
+        	<div class="rt-heading">
+            	<h1>Entreprenuer Profile</h1>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="det">
+    <div class="rt-container">
+          <div class="col-rt-12">
+              <div class="Scriptcontent">
+<!-- Student Profile -->
+<div class="student-profile py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent text-center">
+<!--            <img class="profile_img" src="https://source.unsplash.com/600x300/?student"  alt="dp">-->
+            <h3>{{eni.fullname}}</h3>
+          </div>
+          <div class="card-body">
+            <p class="mb-0"><strong class="pr-1">Contact&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</strong>{{eni.mobileno}}</p>
+            <p class="mb-0"><strong class="pr-1">Location&nbsp;:&nbsp;&nbsp;&nbsp;</strong>{{eni.location}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+          </div>
+          <div class="card-body pt-0">
+            <table class="table table-bordered">
+              <tr>
+                <th width="30%">Email</th>
+                <td width="2%">:</td>
+                <td>{{eni.email}}</td>
+              </tr>
+              <tr>
+                <th width="30%">StartUp Name</th>
+                <td width="2%">:</td>
+                <td>{{eni.ideaname}}</td>
+              </tr>
+              <tr>
+                <th width="30%">StartUp Description</th>
+                <td width="2%">:</td>
+                <td>{{eni.ideadesc}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Business System / Category</th>
+                <td width="2%">:</td>
+                <td>{{eni.ideacat}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Resume</th>
+                <td width="2%">:</td>
+                <td><a href="{{eni.resume.url}}" target="_blank">View</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+          <div style="height: 26px"></div>
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Other Information</h3>
+          </div>
+          <div class="card-body pt-0">
+              <p>{{eni.about}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><center>
+
+    <button onclick="window.location.href='/investor/ignore/{{eni.email}}'" class="submit-det">Ignore</button>
+    <button onclick="window.location.href=window.location.href='/investor/appointment/{{eni.email}}'" class="submit-det">Accept</button>
+</center>
+<!-- partial -->
+
+    		</div>
+		</div>
+    </div>
+</section>
+</body>
+</html>

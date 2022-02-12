@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <title>HAVOC | Team</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{% static '/img/logo.svg' %}">
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'team' %}">Team</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+            </ul>
+        </div>
+    </header>
+
+<br><br>
+
+<br><br>
+
+<br><br>
+<div class="container">
+    <h1 class="heading" align="center">Our Team</h1>
+<br>
+<br><br>
+<br><br>
+    <div class="profiles">
+      <div class="profile">
+        <img src="/static/img/img1.jpg" class="profile-img">
+
+        <h3 class="user-name">Sai Teja</h3>
+        <h5>Web Developer</h5>
+      </div>
+      <div class="profile">
+        <img src="/static/img/p.jpg" class="profile-img">
+
+        <h3 class="user-name">Priya Puppala</h3>
+        <h5>Web Developer</h5>
+      </div>
+      <div class="profile">
+        <img src="/static/img/img3.jpg" class="profile-img">
+
+        <h3 class="user-name">Ravi Teja</h3>
+        <h5>Web Developer</h5>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

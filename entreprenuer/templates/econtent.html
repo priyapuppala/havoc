@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title>Entreprenuer | Content</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'entreprenuer/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{% static 'entreprenuer/img/logo.svg' %}">
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'entreprenuer:home' %}">Home</a></li>
+                <li><a href="{% url 'entreprenuer:services' %}">Services</a></li>
+                <li><a href="{% url 'entreprenuer:contact' %}">Contact</a></li>
+                <li><a href="{% url 'entreprenuer:about' %}">About</a></li>
+                <li><a href="{% url 'entreprenuer:logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <br>
+    <br>
+    <div class="content">
+    <h2 align="center">Investors</h2>
+<div class="row">
+    {% for investor in investors %}
+  <div class="column">
+    <div class="card" onclick="window.location.href='details/{{investor.email}}'">
+      <h3>{{investor.fullname}}</h3>
+      <p>{{investor.email}}</p>
+      <p>{{investor.mobileno}}</p>
+      <p>{{investor.location}}</p>
+    </div>
+  </div>
+    {% empty %}
+    <h3 class="warn" align="center"><u>No Investors Found</u></h3>
+    {% endfor %}
+</div>
+        </div>
+</body>
+</html>

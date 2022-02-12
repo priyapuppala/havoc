@@ -1,0 +1,16 @@
+
+Django Installation - pip install django
+
+Project:
+havoc - django-admin startproject havoc
+
+Apps :
+investor - django-admin startapp investor
+entreprenuer - django-admin startapp entreprenuer
+havocadmin - django-admin startapp havocadmin
+
+MySQL Clinet - pip install mysqlclient
+
+Go to mysql command line client and use command - create database havoc;
+
+pip install Pillow

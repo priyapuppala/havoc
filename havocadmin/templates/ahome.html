@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <title>HAVOC Admin | Home</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'havocadmin/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{% static 'havocadmin/img/logo.svg' %}">
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'havocadmin:home' %}">Home</a></li>
+                <li><a href="{% url 'havocadmin:dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'havocadmin:services' %}">Services</a></li>
+                <li><a href="{% url 'havocadmin:team' %}">Team</a></li>
+                <li><a href="{% url 'havocadmin:about' %}">About</a></li>
+                <li><a href="{% url 'havocadmin:logout' %}">Logout</a></li>
+            </ul>
+        </div>
+        <div class="title">
+            <h1>HAVOC</h1>
+            <h3>Havoc Admin</h3>
+        </div>
+        <div class="main-opt">
+            <a href="{% url 'havocadmin:invqr' %}" class="main-opt-btn">Investor Queries</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="{% url 'havocadmin:invdet' %}" class="main-opt-btn">Investor Details</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="{% url 'havocadmin:enpqr' %}" class="main-opt-btn">Entreprenuer Queries</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="{% url 'havocadmin:enpdet' %}" class="main-opt-btn">Entreprenuer Details</a>
+        </div>
+    </header>
+</body>
+</html>

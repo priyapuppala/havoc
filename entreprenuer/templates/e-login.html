@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+    <title>Entreprenuer | Login</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'entreprenuer/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{% static 'entreprenuer/img/logo.svg' %}">
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'team' %}">Team</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+            </ul>
+        </div>
+        <br>
+    </header>
+    <div class="log-head"><h1>Entreprenuer</h1></div>
+    <div class="login-box">
+        <div class="cont">
+          <div class="form sign-in">
+            <h2>Sign In</h2>
+
+<form name=form method="post">
+     {% csrf_token %}
+            <label>
+              <span>Email Address</span>
+              <input type="email" name="email">
+            </label>
+            <label>
+              <span>Password</span>
+              <input type="password" name="password">
+            </label>
+            <button class="submit" value="login" name="submit" type="submit">Sign In</button>
+            </form><p class="forgot-pass">Forgot Password ?</p>
+
+            <div class="social-media">
+              <ul>
+                <li><img src="{% static 'entreprenuer/img/facebook.png' %}"></li>
+                <li><img src="{% static 'entreprenuer/img/twitter.png' %}"></li>
+                <li><img src="{% static 'entreprenuer/img/linkedin.png' %}"></li>
+                <li><img src="{% static 'entreprenuer/img/instagram.png' %}"></li>
+              </ul>
+            </div>
+          </div>
+      
+          <div class="sub-cont">
+            <div class="img" id="enp">
+              <div class="img-text m-up">
+                <h2>New here?</h2>
+                <p>Sign up and discover great amount of new opportunities!</p>
+              </div>
+              <div class="img-text m-in">
+                <h2>One of us?</h2>
+                <p>If you already has an account, just sign in. We've missed you!</p>
+              </div>
+              <div class="img-btn">
+                <span class="m-up">Sign Up</span>
+                <span class="m-in">Sign In</span>
+              </div>
+            </div>
+            <div class="form sign-up">
+              <h2>Sign Up</h2>
+              <form method="post">
+
+                 {% csrf_token %}
+    {% for field in form %}
+        <label>
+        <span> {{field.label}} </span>
+        {{ field }}
+        </label>
+    {% endfor %}
+            <button class="submit" value="register" name="submit" type="submit">Sign In</button>
+       </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script type="text/javascript" src = "{% static 'js/script.js' %}"></script>
+</body>
+</html>

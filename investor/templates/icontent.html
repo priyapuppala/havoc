@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <title>Investor | Content</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'investor/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{% static 'investor/img/logo.svg' %}">
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'investor:home' %}">Home</a></li>
+                <li><a href="{% url 'investor:services' %}">Services</a></li>
+                <li><a href="{% url 'investor:contact' %}">Contact</a></li>
+                <li><a href="{% url 'investor:about' %}">About</a></li>
+                <li><a href="{% url 'investor:logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+<br>
+    <br>
+    <div class="content">
+    <h2>Recommendations</h2>
+<div class="row">
+    {% for e in enpideas %}
+  <div class="column">
+    <div class="card" onclick="window.location.href='details/{{e.ideaname}}'">
+      <h3>{{e.fullname}}</h3>
+      <p>{{e.email}}</p>
+      <p>{{e.ideaname}}</p>
+      <p>{{e.ideadesc}}</p>
+    </div>
+  </div>
+    {% empty %}
+    <h3 class="warn" align="center"><b>No Recommended StartUp Ideas</b></h3>
+    {% endfor %}
+</div>
+</div>
+<br>
+    <div class="content">
+    <h2>All Posted StartUp Ideas</h2>
+<div class="row">
+    {% for e in enpideasall %}
+  <div class="column">
+    <div class="card" onclick="window.location.href='details/{{e.ideaname}}'">
+      <h3>{{e.fullname}}</h3>
+      <p>{{e.email}}</p>
+      <p>{{e.ideaname}}</p>
+      <p>{{e.ideadesc}}</p>
+    </div>
+  </div>
+    {% empty %}
+    <h3 class="warn" align="center">No StartUp Ideas</h3>
+    {% endfor %}
+</div>
+</div>
+</body>
+</html>

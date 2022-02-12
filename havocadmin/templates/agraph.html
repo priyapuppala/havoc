@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<style>
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 19%;
+  padding: 0 30px;
+}
+
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  text-align: left;
+  background-color: #f1f1f1;
+  line-height:1.5rem;
+  border-radius: 6px;
+  margin-left:30%;
+  margin-right:-25%;
+}
+
+.card h3{
+color: blue;
+}
+h1{
+    color: #fff;
+}
+</style>
+<head>
+    <title>HAVOC Admin | Dashboard</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'havocadmin/css/styles.css' %}"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{% static 'havocadmin/img/logo.svg' %}">
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'havocadmin:home' %}">Home</a></li>
+                <li><a href="{% url 'havocadmin:dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'havocadmin:services' %}">Services</a></li>
+                <li><a href="{% url 'havocadmin:team' %}">Team</a></li>
+                <li><a href="{% url 'havocadmin:about' %}">About</a></li>
+                <li><a href="{% url 'havocadmin:logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+<br><br><br><br>
+    <h1 align="center">Dashboard</h1><br>
+    <div class="row">
+  <div class="column">
+    <div class="card">
+      <h3>{{i}}</h3>
+      <h4>Total No.of Investors&nbsp;&nbsp;<i class="fas fa-users"></i></h4>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>{{e}}</h3>
+        <h4>Total No.of Entreprenuers&nbsp;&nbsp;<i class="fas fa-users"></i></h4>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>{{si}}</h3>
+        <h4>Total No.of StartUp Ideas&nbsp;&nbsp;<i class="fas fa-lightbulb"></i></h4>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>{{iq}}</h3>
+      <h4>Total No.of Investor Queries&nbsp;&nbsp;<i class="fas fa-question"></i></h4>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>{{eq}}</h3>
+      <h4>Total No.of Entreprenuer Queries&nbsp;&nbsp;<i class="fas fa-question"></i></h4>
+    </div>
+  </div>
+</div><br>
+    <div class="dashg">
+
+  {% autoescape off %}
+  {{ plot_div }}
+  {% endautoescape %}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  {% autoescape off %}
+  {{ plot_pie }}
+  {% endautoescape %}
+    </div>
+    <div class="dashg">
+
+  {% autoescape off %}
+  {{ plot_scatter }}
+  {% endautoescape %}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  {% autoescape off %}
+  {{ plot_scatter2 }}
+  {% endautoescape %}
+    </div>
+    <div class="dashg">
+
+  {% autoescape off %}
+  {{ plot_hist }}
+  {% endautoescape %}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  {% autoescape off %}
+  {{ plot_pie2 }}
+  {% endautoescape %}
+    </div>
+</body>
+</html>

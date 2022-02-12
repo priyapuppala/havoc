@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <title>Entreprenuer | Contact</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'entreprenuer/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{% static 'entreprenuer/img/logo.svg' %}">
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'entreprenuer:home' %}">Home</a></li>
+                <li><a href="{% url 'entreprenuer:services' %}">Services</a></li>
+                <li><a href="{% url 'entreprenuer:contact' %}">Contact</a></li>
+                <li><a href="{% url 'entreprenuer:about' %}">About</a></li>
+                <li><a href="{% url 'entreprenuer:logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <br>
+    <section id="contact-section">
+        <div class="container">
+             <h2>Contact Us</h2>
+             <br>
+           <p>Email us and keep upto date with our latest news</p>
+          <div class="contact-form">
+
+               <!-- First grid -->
+            <div>
+              <i class="fa fa-map-marker"></i><span class="form-info">  192 City Boston Amercia #345</span><br>
+              <i class="fa fa-phone" > </i><span class="form-info">  +92 00034567890</span><br>
+              <i class="fa fa-envelope"></i><span class="form-info">  JhonDoe12@Gmail.com</span>
+            </div>
+            
+                <!-- second grid -->
+        <div>
+
+          <form method="post">
+              {% csrf_token %}
+              {% for field in form %}
+              <ul>{{ field }}</ul>
+    {% endfor %}
+            <button class="submit" type="submit">Send Message</button>
+          </form>   
+            </div>
+          </div>
+        </div>
+      </section>
+</body>
+</html>

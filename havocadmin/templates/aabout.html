@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title>HAVOC Admin | About</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'havocadmin/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{% static 'havocadmin/img/logo.svg' %}">
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'havocadmin:home' %}">Home</a></li>
+                <li><a href="{% url 'havocadmin:dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'havocadmin:services' %}">Services</a></li>
+                <li><a href="{% url 'havocadmin:team' %}">Team</a></li>
+                <li><a href="{% url 'havocadmin:about' %}">About</a></li>
+                <li><a href="{% url 'havocadmin:logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <br><br><br><br><br>
+    <div class="iabt-box">
+        <div class="iabt-head">
+            <h1 align="center">About Us</h1>
+        </div>
+        <div class="iabt-content">
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Havoc specializes in regulatory compliance and provides objective insights, subject expertise and a simple approach to all your compliance-related needs. Our diversified client base spans start-ups to mature businesses. We partner with our clients to serve all their compliance needs from the initial phase to ongoing support, training, audit, risk management and governance.
+       <br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+We here at Havoc aim to address the clients’ challenges within the ever-evolving regulatory landscape. We see Compliance as a means to improve the overall sustainability of the industry. Our extensive knowledge, diverse experience and ability to react fast enables clients to rely on us in this manner so much so that we are an extension of the team.
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The team at Havoc  is well-equipped to provide clients with bespoke, risk-focused and cost-effective solutions. Our wide-ranging experience provides the edge you need whilst adding value to your Corporate Governance standards.
+            </h3><br><br>
+
+        </div>
+    </div>
+</body>
+</html>

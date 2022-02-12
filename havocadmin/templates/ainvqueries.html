@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <title>HAVOC Admin | Investor Queries</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'havocadmin/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{% static 'havocadmin/img/logo.svg' %}">
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'havocadmin:home' %}">Home</a></li>
+                <li><a href="{% url 'havocadmin:dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'havocadmin:services' %}">Services</a></li>
+                <li><a href="{% url 'havocadmin:team' %}">Team</a></li>
+                <li><a href="{% url 'havocadmin:about' %}">About</a></li>
+                <li><a href="{% url 'havocadmin:logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <br>
+<div class="tabledet">
+    <h2 align="center">Investor Queries</h2>
+    <br>
+    <table>
+        <center>
+        <tr>
+            {% if count is not 0 %}
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Query</th>
+            <th colspan="2">Action</th>
+            {% endif %}
+        </tr>
+        {% for e in invqr %}
+        <tr>
+            <td>{{e.firstname}}</td>
+            <td>{{e.lastname}}</td>
+            <td>{{e.email}}</td>
+            <td>{{e.subject}}</td>
+            <td>{{e.query}}</td>
+            <td><a href='ireply/{{e.subject}}'>Reply</a></td>
+            <td><a href='idelete/{{e.subject}}'>Delete</a></td>
+        </tr>
+        {% empty %}
+        <h3 align="center">No Investors submitted any queries into HAVOC</h3>
+        {% endfor %}
+        </center>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <title>HAVOC Admin | Investor Details</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'havocadmin/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{% static 'havocadmin/img/logo.svg' %}">
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'havocadmin:home' %}">Home</a></li>
+                <li><a href="{% url 'havocadmin:dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'havocadmin:services' %}">Services</a></li>
+                <li><a href="{% url 'havocadmin:team' %}">Team</a></li>
+                <li><a href="{% url 'havocadmin:about' %}">About</a></li>
+                <li><a href="{% url 'havocadmin:logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <br>
+<div class="tabledet">
+    <h2 align="center">Investor Details</h2>
+    <br>
+    <table >
+        <center>
+        <tr>
+            {% if count is not 0 %}
+            <th>Fullname</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Location</th>
+            {% endif %}
+        </tr>
+        {% for e in invdet %}
+        <tr>
+            <td>{{e.fullname}}</td>
+            <td>{{e.email}}</td>
+            <td>{{e.mobileno}}</td>
+            <td>{{e.location}}</td>
+        </tr>
+        {% empty %}
+        <h3 align="center">No Investors registered into HAVOC</h3>
+        {% endfor %}
+        </center>
+    </table>
+</div>
+</body>
+</html>

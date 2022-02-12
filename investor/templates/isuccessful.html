@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <title>Investor | Successful</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'investor/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{% static 'investor/img/logo.svg' %}">
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'investor:home' %}">Home</a></li>
+                <li><a href="{% url 'investor:services' %}">Services</a></li>
+                <li><a href="{% url 'investor:contact' %}">Contact</a></li>
+                <li><a href="{% url 'investor:about' %}">About</a></li>
+                <li><a href="{% url 'investor:logout' %}">Logout</a></li>
+            </ul>
+        </div>
+        <div class="title">
+            <h2>Mail regarding Appointment was sent successfully</h2>
+            <h3>Continue to the Contents Page</h3>
+        </div>
+        <div class="main-opt">
+            <a href="{% url 'investor:content' %}" class="main-opt-btn">View Content</a>
+        </div>
+    </header>
+</body>
+</html>

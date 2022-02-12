@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <title>Investor | Content</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'investor/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{% static 'investor/img/logo.svg' %}">
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'investor:home' %}">Home</a></li>
+                <li><a href="{% url 'investor:services' %}">Services</a></li>
+                <li><a href="{% url 'investor:contact' %}">Contact</a></li>
+                <li><a href="{% url 'investor:about' %}">About</a></li>
+                <li><a href="{% url 'investor:logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <br>
+    <br>
+    <section id="p-section">
+    <div class="invprofile">
+        <form method="post" enctype="multipart/form-data">
+  <div class="container"><center>
+    <h1>Investor Profile</h1>
+    <p>Please fill in this form to create an account.</p>
+      </center>
+          <center>
+      <table>
+         {% csrf_token %}
+         {% for field in form %}
+          <tr>
+              <td>
+                  <label><b>{{field.label}}</b></label>
+              </td>
+              <td class="ltd">
+                  {{field}}
+              </td>
+          </tr>
+
+      {% endfor %}
+      </table>
+     <br>
+    <button type="submit" value="submit" >Submit</button>
+
+      </center>
+  </div>
+</form>
+
+    </div>
+  </section>
+</body>
+</html>

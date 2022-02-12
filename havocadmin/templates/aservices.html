@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <title>HAVOC Admin | Services</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'havocadmin/css/styles.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{% static 'havocadmin/img/logo.svg' %}">
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'havocadmin:home' %}">Home</a></li>
+                <li><a href="{% url 'havocadmin:dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'havocadmin:services' %}">Services</a></li>
+                <li><a href="{% url 'havocadmin:team' %}">Team</a></li>
+                <li><a href="{% url 'havocadmin:about' %}">About</a></li>
+                <li><a href="{% url 'havocadmin:logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+  <br>
+<div class="services-section">
+      <div class="inner-width">
+        <h1 class="section-title">Our Services</h1>
+        <div class="border"></div>
+        <div class="services-container">
+
+          <div class="service-box">
+            <div class="service-icon">
+                <i class="fas fa-rupee-sign"></i>
+            </div>
+            <div class="service-title">Invest</div>
+            <div class="service-desc">
+              Havoc brings many startup ideas to the investors notice which helps them to choose a best startup idea to invest on.
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <div class="service-title">Company</div>
+            <div class="service-desc">
+              Havoc makes most of the working process online if your idea is selected then the appointment is made by the investors.
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="service-title">Economy</div>
+            <div class="service-desc">
+              Havoc helps the venture capitalists to find out the best startup ideas for them on which they can invest.
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="service-title">Start Up</div>
+            <div class="service-desc">
+              Havoc intention is to bring out the young and talented entreprenuers and their amazing startup ideas.
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="service-title">Time Saving</div>
+            <div class="service-desc">
+              Havoc helps to save your time by creating a interaction between the venture capitalists and the young entreprenuers.
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="service-title">User Friendly</div>
+            <div class="service-desc">
+              Havoc creates a user friendly environment which allows the users to access their respective contents without any errors.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
