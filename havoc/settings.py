@@ -140,4 +140,3 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'havoccapitals@gmail.com'
 EMAIL_HOST_PASSWORD = 'Havoc@123'
-django_heroku.settings(locals())
